@@ -1,0 +1,79 @@
+:root {
+    --my: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    color: aliceblue;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 1.7fr 0.7fr 0.7fr 0.5fr;
+    grid-template-areas: "header menu menu menu" "hero hero hero hero" "main main image image" "main main extra extra" "banner banner banner banner" ;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header{
+    background-color: black;
+    grid-area: header;
+    padding: var(--my);
+}
+
+.menu {
+    background-color: rgb(230, 142, 198);
+    grid-area: menu;
+    padding: var(--my);
+}
+
+.hero {
+    background-color: cornflowerblue;
+    grid-area: hero;
+    padding: var(--my);
+}
+
+main {
+    background-color: rgb(118, 14, 14);
+    grid-area: main;
+    padding: var(--my);
+}
+
+.image {
+    background-color: rgb(217, 175, 235);
+    grid-area: image;
+    padding: var(--my);
+}
+
+.extra {
+    background-color: rgb(135, 208, 135);
+    grid-area: extra;
+    padding: var(--my);
+}
+
+.banner {
+    background-color: rgb(28, 67, 37);
+    grid-area: banner;
+    padding: var(--my);
+}
+
+
+@media(max-width: 768px){
+    .container{
+        grid-template-columns: 0.6fr 1fr 0.5fr;
+        grid-template-rows: 0.5fr 1.5fr 1.7fr 0.9fr 0.6fr;
+        grid-template-areas: "header header header" "hero hero hero" "menu main main" "menu banner banner" "menu extra image";
+    }
+}
+
+@media (max-width: 480px) {
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 0.3fr 0.9fr 1.3fr 0.7fr 0.7fr 0.7fr;
+        grid-template-areas: "header" "menu" "hero" "main" "banner" "extra" "image";
+    }
+}
